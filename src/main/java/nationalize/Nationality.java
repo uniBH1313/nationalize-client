@@ -1,11 +1,11 @@
 package nationalize;
 
 import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+
 
 import java.util.List;
 
+@lombok.Data
 public class Nationality {
 
     private long count;
@@ -20,10 +20,7 @@ public class Nationality {
         this.countries = countries;
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
-    }
+
 
     public long getCount() {
         return count;
@@ -49,6 +46,7 @@ public class Nationality {
         this.countries = countries;
     }
 
+    @lombok.Data
     public static class Country {
 
         private String countryId;
@@ -59,10 +57,7 @@ public class Nationality {
             this.probability = probability;
         }
 
-        @Override
-        public String toString() {
-            return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
-        }
+
 
         public String getCountryId() {
             return countryId;
